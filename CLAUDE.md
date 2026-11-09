@@ -2,7 +2,8 @@
 
 App de ejemplo para demostrar una fábrica agéntica de código: micro frontends Angular con Native
 Federation, un BFF y microservicios Spring Boot. Dominio ficticio (clientes y órdenes), sin datos
-reales. Hoy el repo es solo un esqueleto: la app se construye issue a issue.
+reales. Hoy existen las carpetas del monorepo y la verificación única, pero todavía ningún
+componente: la app se construye issue a issue.
 
 Este archivo es un **router**, no un manual.
 
@@ -21,7 +22,8 @@ aquí se lee del canon en la ruta de contexto que declare la celda de la fábric
 
 | Tema | Estado |
 |---|---|
-| Layout del monorepo y `make check` | pendiente (primer issue) |
+| Layout del monorepo y `make check` | hecho: carpetas creadas, descubrimiento de componentes y autoprueba |
+| Registro de decisiones | hecho: `docs/adr/`, formato en el ADR 0000 |
 | Microservicios, BFF y micro frontends | pendiente |
 | Despliegue local (podman) | pendiente: Kustomize con base portable y overlay `local` |
 | Despliegue en AWS (S3, EKS u otro) | sin decidir: queda abierto, se agrega como overlay |
@@ -35,7 +37,11 @@ services/bff       Spring Boot: única API del frontend, orquesta los MS   (mód
 services/ms-clientes  Spring Boot + H2: clientes                          (plataforma, compartido)
 services/ms-ordenes   Spring Boot + H2: órdenes por cliente               (dominio)
 deploy/            Kustomize: base/ por servicio, overlays/local y overlays/<nube>
+docs/adr/          registro de decisiones (NNNN-slug.md)
+tests/make-check/  fixtures de la autoprueba de make check (no son componentes)
 ```
+
+Cada carpeta de primer nivel tiene un README con qué va ahí.
 
 Invariantes:
 
@@ -63,6 +69,12 @@ Scopes derivados del layout: cada carpeta bajo `apps/` y `services/` es un scope
 | `docs` | `docs/`, README |
 | `deps` | dependencias |
 | `repo` | raíz, `Makefile`, `.github/`, archivos de ignore |
+
+## Registro de decisiones
+
+Una decisión que cierra una discusión va a `docs/adr/NNNN-slug.md`, con el formato del
+[ADR 0000](docs/adr/0000-registro-de-decisiones.md). Divergencia declarada con el canon: el archivo
+no lleva el prefijo `adr-`, porque la carpeta ya lo dice.
 
 ## Reglas cross cutting
 
