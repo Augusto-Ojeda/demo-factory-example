@@ -1,0 +1,10 @@
+{
+  "name": "falsa",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Fixture de la autoprueba de make check: una app sin dependencias cuyo test falla.",
+  "scripts": {
+    "test": "echo MARCA-NPM-TEST && exit 1",
+    "build": "echo build"
+  }
+}

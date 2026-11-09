@@ -84,7 +84,16 @@ la promoción.
 make check
 ```
 
-Hoy no hay componentes: `make check` solo confirma que el esqueleto está en pie.
+`make check` descubre componentes por convención y corre la cadena de cada uno; si uno falla, falla:
+
+| Componente | Se detecta por | Cadena |
+|---|---|---|
+| `services/<x>/` | `mvnw` | `./mvnw -B verify` |
+| `apps/<x>/` | `package.json` | `npm ci`, `npm run lint --if-present`, `npm test`, `npm run build` |
+
+Sin componentes termina en verde y lo informa. Antes corre `make selftest`, una autoprueba contra
+los fixtures de `tests/make-check/` que demuestra que la verificación falla cuando un componente
+falla. Esos fixtures no son componentes reales: no los muevas a `apps/` ni a `services/`.
 
 ## Acciones que se confirman antes de hacer
 
