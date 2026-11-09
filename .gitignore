@@ -1,0 +1,71 @@
+# Dependencias
+node_modules/
+
+# Artefactos de build del framework
+dist/
+build/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+.turbo/
+*.tsbuildinfo
+
+# Entorno y secretos: se versiona el ejemplo, nunca el archivo real
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+credentials.json
+service-account*.json
+
+# Cobertura y pruebas
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+blob-report/
+
+# Cachés de herramientas
+.cache/
+.eslintcache
+.parcel-cache/
+.vite/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Configuración local del asistente: lo compartible se versiona, lo de la máquina no
+.claude/settings.local.json
+.claude/worktrees/
+
+# Notas locales del repo: scratch de sesión, handoffs y planes, descartables por diseño
+notes/
+tmp/
+!tmp/.gitkeep
+
+# Artefactos de reportes generados
+reports/
+!reports/README.md
+*.log
+
+# Java / Maven
+target/
+.mvn/wrapper/maven-wrapper.jar
+*.class
+
+# Angular
+.angular/

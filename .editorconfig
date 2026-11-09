@@ -1,0 +1,21 @@
+root = true
+
+[*]
+end_of_line = lf
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# Markdown: dos espacios al final son un salto de línea intencional, no se recortan
+[*.md]
+trim_trailing_whitespace = false
+
+# Python: cuatro espacios
+[*.py]
+indent_size = 4
+
+# Makefile: tabulación real, no espacios
+[{Makefile,makefile,*.mk}]
+indent_style = tab
