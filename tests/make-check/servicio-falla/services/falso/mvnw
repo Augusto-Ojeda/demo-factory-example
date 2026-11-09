@@ -1,0 +1,4 @@
+#!/bin/sh
+# Fixture de la autoprueba de make check: un Maven Wrapper falso que siempre falla.
+echo "MARCA-MVNW $*"
+exit 1
